@@ -1,0 +1,461 @@
+body {
+  background-color: lightgray;
+}
+
+header {
+  grid-area: header;
+  background: url("../img/Banner.png") no-repeat;
+  background-size: cover;
+  text-align: start;
+  height: 3em;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  justify-content: center;
+}
+
+footer {
+  grid-area: footer;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+.Product p {
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+  color: blue;
+  font-size: 1.2rem;
+}
+
+.Product h5 {
+  margin: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.Product del {
+  margin: 1rem;
+}
+
+/****************** Configuracion Mobile ******************/
+@media (max-width: 576px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "main2"
+      "main3"
+      "footer";
+    gap: 5px;
+    grid-template-rows: 10% auto auto auto auto 4%;
+    height: 100vh;
+    align-items: start;
+  }
+
+  nav {
+    grid-area: nav;
+    width: 100vw;
+  }
+
+  footer img {
+    width: 2em;
+    height: 2em;
+  }
+
+  footer h5 {
+    margin: 5px;
+  }
+
+  footer p {
+    margin: 4px;
+    font-size: small;
+  }
+
+  footer a {
+    font-size: small;
+  }
+
+  .grid-lentes {
+    grid-area: main2;
+  }
+
+  .grid-tripodes {
+    grid-area: main3;
+  }
+
+  .grid-container img {
+    width: 50%;
+    height: 10rem;
+  }
+
+  .grid-container button {
+    background-color: inherit;
+    height: 3em;
+    border-radius: 10%;
+  }
+
+  i {
+    color: white;
+  }
+
+  .footermobile {
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 5px;
+  }
+
+  /************************* Productos ******************************/
+
+  .Product {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    align-items: center;
+    justify-content: center;
+    width: 18em;
+    height: 25em;
+    text-align: center;
+    background-color: white;
+    margin: 1rem;
+  }
+
+  .Product button {
+    width: 16em;
+    background-color: lightblue;
+    height: 2em;
+    border-radius: 0;
+  }
+
+  .boton :hover {
+    background-color: lightskyblue;
+    transform: scale(1.05, 1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .sidebar-menu {
+    display: none;
+  }
+
+  .footerdesktop {
+    display: none;
+  }
+
+  /************************* Slider ******************************/
+
+  .slider {
+    height: 13rem;
+    width: 15em;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+  .slider:before {
+    content: "";
+    background: transparent url("/assets/img/play.png") no-repeat scroll right
+      bottom;
+    height: 30px;
+    width: 95%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .slider li:after {
+    content: "";
+    height: 10px;
+    width: 0%;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    background: red;
+    transition: width 2s linear;
+  }
+
+  .slider {
+    height: 13rem;
+    width: 19em;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+  .slider li {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    opacity: 1;
+  }
+
+  .slider li:hover:after {
+    width: 95%;
+  }
+
+  .slider li:hover {
+    margin: 10000000px;
+    opacity: 0;
+    transition: margin 0.1s linear 3s, opacity 1s linear 2s;
+  }
+
+  .slider li:hover ~ li {
+    z-index: -1;
+  }
+
+  .slider:hover:before {
+    display: none;
+  }
+
+  /************************* Menú Desplegable ******************************/
+
+  .dropdown {
+    display: inline-block;
+    position: relative;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    background-color: lightgray;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  .dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+  }
+  .dropdown-content a:hover {
+    color: #ffffff;
+    background-color: #00a4bd;
+  }
+}
+
+
+
+
+/****************** Configuracion Desktop ******************/
+@media (min-width: 577px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "manu nav"
+      "menu main"
+      "menu main2"
+      "menu main3"
+      "footer footer";
+    gap: 10px;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 10% auto auto auto auto 3%;
+    height: 100vh;
+  }
+
+  header {
+    height: 5em;
+  }
+
+  header button {
+    display: none;
+  }
+
+  nav {
+    grid-area: nav;
+    display: block;
+    text-align: center;
+  }
+
+  footer {
+    height: 3em;
+  }
+
+  .grid-container img {
+    width: 60%;
+    height: 10rem;
+  }
+
+  .footerdesktop {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .footerdesktop h5 {
+    margin: 5px;
+  }
+
+  .footerdesktop p {
+    margin: 4px;
+    font-size: small;
+  }
+
+  main section {
+    display: none;
+  }
+
+  .footermobile {
+    display: none;
+  }
+
+  /**************** Menu Lateral ****************/
+  .sidebar-menu {
+    grid-area: menu;
+    margin: 0;
+    text-align: center;
+    padding-left: 3rem;
+    display: block;
+  }
+
+  .lista {
+    padding-left: 0;
+    margin: 0;
+    text-align: start;
+    background-color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .lista li {
+    display: flex;
+    justify-content: center;
+    border: solid 1px;
+    height: 2rem;
+  }
+
+  .lista p,
+  h4 {
+    margin-inline-start: 0.5em;
+    margin-block-end: 0;
+    margin-block-start: 1em;
+    font-size: small;
+    width: 6em;
+  }
+
+  .lista :hover {
+    background-color: #cdc3e6;
+    transform: scale(1.05, 1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /****************** Grilla de Productos ******************/
+  .grid-menu {
+    display: grid;
+    grid-template-areas: "Item1 Item2 Item3";
+    justify-content: space-evenly;
+  }
+
+  .grid-lentes {
+    display: grid;
+    grid-template-areas: "Item1 Item2 Item3";
+    justify-content: space-evenly;
+    grid-area: main2;
+  }
+
+  .grid-tripodes {
+    display: grid;
+    grid-template-areas: "Item1 Item2 Item3";
+    justify-content: space-evenly;
+    grid-area: main3;
+  }
+
+  .Product {
+    display: flex;
+    flex-direction: column;
+    border: solid 1px;
+    align-items: center;
+    justify-content: center;
+    width: 19em;
+    height: 23em;
+    text-align: center;
+    background-color: white;
+    margin: 1rem;
+  }
+
+  button {
+    width: 16em;
+    background-color: lightblue;
+    height: 2em;
+  }
+
+  .boton :hover {
+    background-color: lightskyblue;
+    transform: scale(1.05, 1.05);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  /************************* Slider ******************************/
+
+  .slider img {
+    width: 50%;
+  }
+
+  .slider {
+    height: 13rem;
+    width: 19em;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    list-style-type: none;
+    overflow: hidden;
+  }
+
+  .slider li {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    opacity: 1;
+  }
+
+  .slider li:after {
+    content: "";
+    height: 10px;
+    width: 0%;
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    background: red;
+    transition: width 2s linear;
+  }
+
+  .slider li:hover:after {
+    width: 100%;
+  }
+
+  .slider li:hover {
+    margin: 10000000px;
+    opacity: 0;
+    transition: margin 0.1s linear 3s, opacity 1s linear 2s;
+  }
+
+  .slider li:hover ~ li {
+    z-index: -1;
+  }
+
+  .slider:before {
+    content: "";
+    background: transparent url("/assets/img/play.png") no-repeat scroll right
+      bottom;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .slider:hover:before {
+    display: none;
+  }
+}
