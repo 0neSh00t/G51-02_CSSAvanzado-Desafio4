@@ -158,8 +158,7 @@ footer {
 
   .slider:before {
     content: "";
-    background: transparent url("../img/play.png") no-repeat scroll right
-      bottom;
+    background: transparent url("../img/play.png") no-repeat scroll right bottom;
     height: 30px;
     width: 95%;
     position: absolute;
@@ -446,8 +445,7 @@ footer {
 
   .slider:before {
     content: "";
-    background: transparent url("../img/play.png") no-repeat scroll right
-      bottom;
+    background: transparent url("../img/play.png") no-repeat scroll right bottom;
     height: 30px;
     width: 100%;
     position: absolute;
